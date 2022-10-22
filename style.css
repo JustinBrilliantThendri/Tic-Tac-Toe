@@ -34,6 +34,7 @@
     aspect-ratio : 1 / 1;
     overflow : hidden;
     position : relative;
+    -webkit-tap-highlight-color : transparent;
 }
 
 .t{
@@ -66,6 +67,10 @@
 
 .xo:not(.xo:empty)::before{
     animation : clicked 0.2s ease-in-out;
+}
+
+.xo:not(.xo:empty){
+    cursor : default;
 }
 
 @keyframes clicked{
