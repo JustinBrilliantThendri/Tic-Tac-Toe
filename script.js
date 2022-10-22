@@ -18,7 +18,7 @@ function check_win(){
         return "win";
     }else if((arr[2] == arr[4]) && (arr[4] == arr[6])){
         return "win";
-    }else if((arr[0] != '0') && (arr[1] != '1') && (arr[2] != '2') && (arr[3] != '3') && (arr[4] != '4') && (arr[0] != '5') && (arr[0] != '5') && (arr[6] != '6') && (arr[7] != '7') && (arr[8] != '8')){
+    }else if((arr[0] != '0') && (arr[1] != '1') && (arr[2] != '2') && (arr[3] != '3') && (arr[4] != '4') && (arr[5] != '5') && (arr[6] != '6') && (arr[7] != '7') && (arr[8] != '8')){
         return "draw";
     }else{
         return "nothing";
