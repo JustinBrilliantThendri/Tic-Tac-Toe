@@ -1,8 +1,6 @@
-//variables
 let arr = ['0', '1', '2', '3', '4', '5', '6', '7', '8'];
 let bot = false;
 
-//check win
 function check_win(){
     if((arr[0] == arr[1]) && (arr[1] == arr[2])){
         return "win";
@@ -27,7 +25,6 @@ function check_win(){
     }
 }
 
-//for player
 function clicked(idx){
     if(arr.includes(idx) && !bot){
         document.getElementsByClassName("xo")[Number(idx)].innerHTML = "<i class='fa-solid fa-xmark'></i>";
@@ -45,7 +42,6 @@ function clicked(idx){
     }
 }
 
-//for bot
 function bot_turn(){
     let random = Math.round(Math.random() * 8);
     while(arr[random] == 'x' || arr[random] == 'o'){
