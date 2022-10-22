@@ -57,6 +57,5 @@ function bot_turn(){
         }else if(check_win() == "draw"){
             setTimeout(function(){alert("Draw!");window.location.reload();}, 400);
         }
-        window.location.reload();
     }
 }
