@@ -105,6 +105,7 @@
     letter-spacing : 2px;
     transition : all 0.4s;
     position : relative;
+    -webkit-tap-highlight-color : transparent;
 }
 
 .option:nth-child(1){
