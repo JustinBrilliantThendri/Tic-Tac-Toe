@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
 *{
     margin : 0;
     padding : 0;
     box-sizing : border-box;
-
+    font-family : "Josefin Sans", sans-serif;
 }
 
 .container{
@@ -73,6 +75,63 @@
     cursor : default;
 }
 
+.versus{
+    position : fixed;
+    background : rgba(0, 0, 0, 0.695);
+    display : flex;
+    align-items : center;
+    justify-content : center;
+    width : 100%;
+    height : 100vh;
+    z-index : 1;
+    padding : 0 5%;
+    transition : opacity 0.4s, z-index 0s 0.4s;
+}
+
+.option{
+    display : flex;
+    justify-content : center;
+    align-items : center;
+    width : 100%;
+    max-width : 700px;
+    aspect-ratio : 3 / 1;
+    border-radius : 20px;
+    margin : 0 5%;
+    background : #61F2F5;
+    font-weight : bold;
+    font-size : 40px;
+    cursor : pointer;
+    color : #323643;
+    letter-spacing : 2px;
+    transition : all 0.4s;
+    position : relative;
+}
+
+.option:nth-child(1){
+    left : -55%;
+    animation : move 0.5s 0.5s linear forwards;
+}
+
+.option:nth-child(2){
+    left : 55%;
+    animation : move 0.5s 0.5s linear forwards;
+}
+
+.option:hover{
+    transform : scale(1.04);
+}
+
+.option:active{
+    color : #F7F7F7;
+    background : #606470;
+}
+
+@keyframes move{
+    to{
+        left : 0;
+    }
+}
+
 @keyframes clicked{
     from{
         transform : scale(0);
@@ -85,5 +144,21 @@
 @media screen and (max-width : 600px){
     .xo{
         font-size : 20vw;
+    }
+}
+
+@media screen and (max-width : 800px){
+    .versus{
+        flex-wrap : wrap;
+        align-content : space-evenly;
+    }
+    .option{
+        font-size : 37.5px;
+    }
+    .option:nth-child(1){
+        left : -110%;
+    }
+    .option:nth-child(2){
+        left : 110%;
     }
 }
