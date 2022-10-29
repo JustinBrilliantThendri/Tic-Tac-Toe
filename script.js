@@ -2,6 +2,7 @@ let arr = ['0', '1', '2', '3', '4', '5', '6', '7', '8'];
 let bot = false;
 let vs;
 let count = 0;
+let noclick = false;
 
 function versus(x){
     vs = x;
@@ -53,18 +54,22 @@ function clicked(idx){
                 }
             }
         }else if(vs == "player"){
-            document.getElementsByClassName("xo")[Number(idx)].innerHTML = (count % 2 == 0) ? "<i class='fa-solid fa-xmark'></i>" : "<i class='fa-solid fa-o'></i>";
-            arr[Number(idx)] = (count % 2 == 0) ? 'x' : 'o';
-            if(check_win() == "nothing"){
-                count++;
-            }else if(check_win() == "win"){
-                if(count % 2 == 0){
-                    setTimeout(function(){alert("Player 1 Wins!");window.location.reload();}, 400);
-                }else{
-                    setTimeout(function(){alert("Player 2 Wins!");window.location.reload();}, 400);
+            if(!noclick){
+                document.getElementsByClassName("xo")[Number(idx)].innerHTML = (count % 2 == 0) ? "<i class='fa-solid fa-xmark'></i>" : "<i class='fa-solid fa-o'></i>";
+                arr[Number(idx)] = (count % 2 == 0) ? 'x' : 'o';
+                if(check_win() == "nothing"){
+                    count++;
+                }else if(check_win() == "win"){
+                    noclick = true;
+                    if(count % 2 == 0){
+                        setTimeout(function(){alert("Player 1 Wins!");window.location.reload();}, 400);
+                    }else{
+                        setTimeout(function(){alert("Player 2 Wins!");window.location.reload();}, 400);
+                    }
+                }else if(check_win() == "draw"){
+                    noclick = true;
+                    setTimeout(function(){alert("Draw!");window.location.reload();}, 400);
                 }
-            }else if(check_win() == "draw"){
-                setTimeout(function(){alert("Draw!");window.location.reload();}, 400);
             }
         }
     }
